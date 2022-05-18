@@ -1,52 +1,34 @@
-const removeFromArray = function(array, ...arguments) {
+const removeFromArray = function(array, ...element) {
 
-    let array1 = array;
-    //let elements = [elem1, elem2];
-    let normalArray = Array.prototype.slice.call(arguments);
-    console.log(normalArray);
+    let before = array;
+    console.log("before:", before);
+    let elements = element;
+    console.log("tiene que eliminar:", elements);
 
-    for (let i=0; i<array1.length; i++){
-        for (let j=0; j<normalArray.length;j++){
-            if (array1[i] == normalArray[j]){
-                array1.splice(i,1);
-                console.log(array1);
-                return array1;
-                
+    for (let i=0; i<before.length; i++){
+        for (let j=0; j<elements.length; j++){
+            if (before[i] == elements[j]){
+                before.splice(i,1);
+               // console.log(array1);
+
             }
+            
         }
-        
-        
+        console.log(before);
     }
-
-
-    //let array2 = array.pop(element);
-    //return ;
-    //console.log(array1, normalArray);
+   
+     console.log("array Devuelto es:", before);
+     return before;
+     
 
 };
 
-removeFromArray([1, 2, 3, 4], 3, 4)
+
+
+
+removeFromArray([1, 2, 3, 4], 3, 2)
+
+
 
 // Do not edit below this line
 module.exports = removeFromArray;
-
-
-
-
-
-
-
-
-
-// LLAMAR ARGUMENTOS, PARA "OBTENER" ARRAY DESDE A PARTIR DE UN ELEMENTO ESPECIFICO,
-//FIJARSE EL PRIMER EJEMPLO: ARGUMENTS (EL ARRAY DE ARGUMENTS), "1" ES EL INDEX DE ESE ARGUMENTS.
-//EN ESTE CASO, TOMARIA A PARTIR DEL B, PORUQE A ES EL ARGUMENTO [0]
-    // function f(a, b) {
-    //     let normalArray = Array.prototype.slice.call(arguments,1)
-    //     // -- or --
-    //     let normalArray = [].slice.call(arguments)
-    //     // -- or --
-    //     let normalArray = Array.from(arguments)
-      
-
-
