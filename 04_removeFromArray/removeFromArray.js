@@ -1,32 +1,17 @@
-const removeFromArray = function(array, ...element) {
+const removeFromArray = function(...args) {
 
-    let before = array;
-    console.log("before:", before);
-    let elements = element;
-    console.log("tiene que eliminar:", elements);
-
-    for (let i=0; i<before.length; i++){
-        for (let j=0; j<elements.length; j++){
-            if (before[i] == elements[j]){
-                before.splice(i,1);
-               // console.log(array1);
-
-            }
-            
+    let array = args[0];
+    let newArray = [];
+ 
+    array.forEach(item => {
+        if (!args.includes(item)){
+            newArray.push(item);
         }
-        console.log(before);
-    }
-   
-     console.log("array Devuelto es:", before);
-     return before;
-     
-
-};
-
-
-
-
-removeFromArray([1, 2, 3, 4], 3, 2)
+    });
+    return newArray;
+ 
+}
+//removeFromArray([1, 2, 3, 4], 3, 2)
 
 
 
